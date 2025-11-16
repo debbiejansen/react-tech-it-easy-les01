@@ -44,6 +44,15 @@ main {
     color: #333333;
 }
 
+
+.product-total-sales {
+    color: green;
+}
+
+.product-total-bought {
+    color: blue;
+}
+
 .product img {
     width: 100%;
 }
