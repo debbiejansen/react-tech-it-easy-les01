@@ -1,0 +1,49 @@
+/* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* --------------- 2.3 Products ------------------- */
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 300px;
+    margin: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: grey;
+}
+
+.product-name {
+    font-weight: 300;
+    color: #df7c6d;
+    margin: 20px 0;
+}
+
+.product-description {
+    font-weight: 200;
+    font-size: 16px;
+    text-align: justify;
+    color: #333333;
+}
+
+.product img {
+    width: 100%;
+}
