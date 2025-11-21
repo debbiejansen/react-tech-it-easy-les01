@@ -17,7 +17,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 100px;
+    padding: 25px;
+    flex-wrap: wrap;
 }
 
 .product {
@@ -26,9 +27,21 @@ main {
     align-items: center;
     flex-basis: 300px;
     margin: 20px;
+    padding: 20px;
     flex-grow: 0;
     flex-shrink: 0;
-    background-color: grey;
+}
+
+.totalSold {
+    background-color: lightgreen;
+}
+
+.totalBought {
+    background-color: lightblue;
+}
+
+.totalToSell {
+    background-color: lightcoral;
 }
 
 .product-name {
@@ -59,4 +72,9 @@ main {
 
 .product img {
     width: 100%;
+}
+
+.highlighted {
+    align-items: flex-start;
+    background-color: lightgray;
 }
