@@ -5,6 +5,7 @@ import {totalBought} from './helpers/totalBought.js';
 import {totalToSell} from './helpers/totalSales.js';
 import {bestSellingTv} from './constants/inventory.js';
 import {formatPrice} from './helpers/highlightedProduct.js';
+import {formatSizes} from "./helpers/formatSizes.js";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                 <article className="product highlighted">
                     <p>{bestSellingTv.brand} {bestSellingTv.type} - {bestSellingTv.name}</p>
                     <p>{formatPrice(bestSellingTv.price)}</p>
+                    <p>{formatSizes(bestSellingTv.availableSizes)}</p>
                 </article>
             </main>
 
