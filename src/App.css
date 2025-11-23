@@ -25,11 +25,29 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 300px;
+    flex-basis: 250px;
     margin: 20px;
-    padding: 20px;
-    flex-grow: 0;
-    flex-shrink: 0;
+    padding: 60px;
+}
+
+.product.highlighted {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    background-color: lightgray;
+    border: 2px black dotted;
+}
+
+.product.highlighted img {
+    width: 15rem;
+}
+
+.highlighted-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .totalSold {
@@ -53,8 +71,9 @@ main {
 .product-description {
     font-weight: 200;
     font-size: 16px;
-    text-align: justify;
+    text-align: center;
     color: #333333;
+    padding-bottom: 30px;
 }
 
 
@@ -68,13 +87,4 @@ main {
 
 .product-total-to-sell {
     color: red;
-}
-
-.product img {
-    width: 100%;
-}
-
-.highlighted {
-    align-items: flex-start;
-    background-color: lightgray;
 }

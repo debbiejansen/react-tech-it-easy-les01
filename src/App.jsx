@@ -5,14 +5,16 @@ import {totalBought} from './helpers/totalBought.js';
 import {totalToSell} from './helpers/totalSales.js';
 import {bestSellingTv} from './constants/inventory.js';
 import {formatPrice} from './helpers/highlightedProduct.js';
-import {formatSizes} from "./helpers/formatSizes.js";
+import {formatSizes} from './helpers/formatSizes.js';
+
+// import checkmark from 'src/assets/check.png';
 
 function App() {
     return (
         <>
             <header>
-            <h1>Tech it easy dashboard</h1>
-            <h2>Verkoopoverzicht</h2>
+                <h1>Tech it easy dashboard</h1>
+                <h2>Verkoopoverzicht</h2>
             </header>
             <main>
                 <article className="product totalSold">
@@ -31,9 +33,12 @@ function App() {
                 </article>
 
                 <article className="product highlighted">
-                    <p>{bestSellingTv.brand} {bestSellingTv.type} - {bestSellingTv.name}</p>
-                    <p>{formatPrice(bestSellingTv.price)}</p>
-                    <p>{formatSizes(bestSellingTv.availableSizes)}</p>
+                    <img src={bestSellingTv.sourceImg} alt="Bestselling TV"/>
+                    <div className="highlighted-text">
+                        <p>{bestSellingTv.brand} {bestSellingTv.type} - {bestSellingTv.name}</p>
+                        <p>{formatPrice(bestSellingTv.price)}</p>
+                        <p>{formatSizes(bestSellingTv.availableSizes)}</p>
+                        {/*<img src={checkmark} alt="checkmark" />*/}</div>
                 </article>
             </main>
 
