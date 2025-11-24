@@ -7,9 +7,12 @@ import {bestSellingTv} from './constants/inventory.js';
 import {formatPrice} from './helpers/highlightedProduct.js';
 import {formatSizes} from './helpers/formatSizes.js';
 
-// import checkmark from 'src/assets/check.png';
 
 function App() {
+    function logMessage(message) {
+        console.log(message);
+    }
+
     return (
         <>
             <header>
@@ -38,8 +41,11 @@ function App() {
                         <p>{bestSellingTv.brand} {bestSellingTv.type} - {bestSellingTv.name}</p>
                         <p>{formatPrice(bestSellingTv.price)}</p>
                         <p>{formatSizes(bestSellingTv.availableSizes)}</p>
-                        {/*<img src={checkmark} alt="checkmark" />*/}</div>
+                    </div>
                 </article>
+                <button type={"button"} onClick={function(){logMessage("Meest verkocht eerst");}}>Meest verkocht eerst</button>
+                <button type={"button"} onClick={function(){logMessage("Goedkoopste eerst");}}>Goedkoopste eerst</button>
+                <button type={"button"} onClick={function(){logMessage("Meest geschikt voor sport eerst");}}>Meest geschikt voor sport eerst</button>
             </main>
 
         </>
