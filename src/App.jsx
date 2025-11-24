@@ -1,8 +1,7 @@
 import './App.css';
 import './helpers/totalSales.js';
-import {totalSales} from './helpers/totalSales.js';
+import {totalSales, totalToSell} from './helpers/totalSales.js';
 import {totalBought} from './helpers/totalBought.js';
-import {totalToSell} from './helpers/totalSales.js';
 import {bestSellingTv, inventory} from './constants/inventory.js';
 import {formatPrice} from './helpers/highlightedProduct.js';
 import {formatSizes} from './helpers/formatSizes.js';

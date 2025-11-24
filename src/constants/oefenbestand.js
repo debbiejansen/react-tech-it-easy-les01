@@ -10,6 +10,11 @@ function showOutcomeInConsole() {
         return tv.sold === tv.originalStock;
     })
     console.log(soldOutTvs);
+
+    const findTv = inventory.find((tv) => {
+        return tv.type === "NH3216SMART";
+    });
+    console.log(findTv);
 }
 
 export default showOutcomeInConsole;
