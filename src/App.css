@@ -17,80 +17,139 @@ button{
 
 /* --------------- 2.3 Products ------------------- */
 
-main {
+.sales-overview {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 25px;
-    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
 .product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 250px;
-    margin: 20px;
-    padding: 30px;
+    border: 2px solid #e4e4e4;
 }
 
-.product.highlighted {
-    flex-basis: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    background-color: lightgray;
-    border: 2px black dotted;
+.product-title {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
 }
 
-.product.highlighted img {
-    width: 15rem;
+.product-number {
+    font-size: 30px;
+    font-weight: 600;
 }
 
-.highlighted-text {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+
+/* --------------- 2.4 Colors ------------------- */
+
 
 .totalSold {
-    background-color: lightgreen;
-    border: 2px dashed green;
+    background-color: #e8fced;
+    border-color: #7bcf94;
 }
 
 .totalBought {
-    background-color: lightblue;
-    border: 2px dashed blue;
+    background-color: #e8f4ff;
+    border-color: #8eb9e8;
 }
 
 .totalToSell {
-    background-color: lightcoral;
-    border: 2px dashed red;
+    background-color: #ffecec;
+    border-color: #f29c9c;
 }
 
-.product-name {
-    font-weight: 300;
-    color: #df7c6d;
-    margin: 20px 0;
+
+/* --------------- 2.5 Highlighted product ------------------- */
+
+
+.highlighted {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    border: 2px dashed #999;
+    background-color: #f6f6f6;
+    margin: 20px;
 }
 
-.product-description {
-    font-weight: 200;
-    font-size: 16px;
-    text-align: center;
-    color: #333333;
-    padding-bottom: 30px;
+.highlighted img {
+    width: 15rem;
 }
 
-.product-total-sales {
-    color: green;
+.highlighted-text p {
+    margin-bottom: 15px;
 }
 
-.product-total-bought {
-    color: blue;
+/* --------------- 2.6 Sorting Buttons ------------------- */
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
 }
 
-.product-total-to-sell {
-    color: red;
+/* --------------- 2.6 Inventory overview ------------------- */
+
+.inventory-overview {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    border: 2px dashed #999;
+    margin: 20px;
+}
+
+.inventory-overview img {
+    width: 15rem;
+}
+
+
+/* --------------- 2.7 TV overview ------------------- */
+
+
+.tv-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Individual TV item */
+.tv-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+/* TV Image */
+.tv-item img {
+    width: 12rem;
+    border-radius: 10px;
+}
+
+/* Text block */
+.tv-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tv-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.tv-price {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.tv-sizes {
+    font-size: 14px;
+    color: #444444;
 }

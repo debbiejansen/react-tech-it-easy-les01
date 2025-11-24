@@ -3,12 +3,14 @@ import './helpers/totalSales.js';
 import {totalSales} from './helpers/totalSales.js';
 import {totalBought} from './helpers/totalBought.js';
 import {totalToSell} from './helpers/totalSales.js';
-import {bestSellingTv} from './constants/inventory.js';
+import {bestSellingTv, inventory} from './constants/inventory.js';
 import {formatPrice} from './helpers/highlightedProduct.js';
 import {formatSizes} from './helpers/formatSizes.js';
-
+import showOutcomeInConsole from './constants/oefenbestand.js';
 
 function App() {
+    showOutcomeInConsole();
+
     function logMessage(message) {
         console.log(message);
     }
@@ -19,23 +21,27 @@ function App() {
                 <h1>Tech it easy dashboard</h1>
                 <h2>Verkoopoverzicht</h2>
             </header>
-            <main>
+
+            <section className="sales-overview">
                 <article className="product totalSold">
-                    <p className="product-description">Aantal verkochte producten</p>
-                    <h3 className="product-total-sales">{totalSales}</h3>
+                    <p className="product-title">Aantal verkochte producten</p>
+                    <h3 className="product-number">{totalSales}</h3>
                 </article>
 
                 <article className="product totalBought">
-                    <p className="product-description">Aantal verkochte producten</p>
-                    <h3 className="product-total-bought">{totalBought}</h3>
+                    <p className="product-title">Aantal verkochte producten</p>
+                    <h3 className="product-number">{totalBought}</h3>
                 </article>
 
                 <article className="product totalToSell">
-                    <p className="product-description">Aantal verkochte producten</p>
-                    <h3 className="product-total-to-sell">{totalToSell}</h3>
+                    <p className="product-title">Aantal verkochte producten</p>
+                    <h3 className="product-number">{totalToSell}</h3>
                 </article>
+            </section>
 
-                <article className="product highlighted">
+            <section>
+                <h2>Best verkochte tv</h2>
+                <article className="highlighted">
                     <img src={bestSellingTv.sourceImg} alt="Bestselling TV"/>
                     <div className="highlighted-text">
                         <p>{bestSellingTv.brand} {bestSellingTv.type} - {bestSellingTv.name}</p>
@@ -43,11 +49,50 @@ function App() {
                         <p>{formatSizes(bestSellingTv.availableSizes)}</p>
                     </div>
                 </article>
-                <button type={"button"} onClick={function(){logMessage("Meest verkocht eerst");}}>Meest verkocht eerst</button>
-                <button type={"button"} onClick={function(){logMessage("Goedkoopste eerst");}}>Goedkoopste eerst</button>
-                <button type={"button"} onClick={function(){logMessage("Meest geschikt voor sport eerst");}}>Meest geschikt voor sport eerst</button>
-            </main>
+            </section>
 
+            <section>
+                <h2>Alle tvs</h2>
+                <div className="button-row">
+                    <button type={"button"} onClick={function () {
+                        logMessage("Meest verkocht eerst");
+                    }}>Meest verkocht eerst
+                    </button>
+                    <button type={"button"} onClick={function () {
+                        logMessage("Goedkoopste eerst");
+                    }}>Goedkoopste eerst
+                    </button>
+                    <button type={"button"} onClick={function () {
+                        logMessage("Meest geschikt voor sport eerst");
+                    }}>Meest geschikt voor sport eerst
+                    </button>
+                    <button type={"button"} onClick={function () {
+                        logMessage("Grootse schermgroottes eerst");
+                    }}>Grootse schermgroottes eerst
+                    </button>
+                </div>
+
+                <div className={"tv-list"}>
+                    {inventory.map(function(tv) {
+                        return (
+                            <article key={tv.id} className={"tv-item"}>
+                                <img src={tv.sourceImg} alt={tv.name} />
+                                <div className={"tv-text"}>
+                                    <p className={"tv-title"}>
+                                        {tv.brand} {tv.type} - {tv.name}
+                                    </p>
+                                    <p className={"tv-price"}>
+                                        €{tv.price},-
+                                    </p>
+                                    <p className="tv-sizes">
+                                        {formatSizes(tv.availableSizes)}
+                                    </p>
+                                </div>
+                            </article>
+                        );
+                    })}
+                </div>
+            </section>
         </>
     );
 }

@@ -1,9 +1,15 @@
 // oefenbestand.js
-import { inventory } from './inventory.js';
+import {inventory} from './inventory.js';
 
 function showOutcomeInConsole() {
-    console.log('uitkomst opdracht 1a');
-    console.log('uitkomst opdracht 1b');
+    inventory.forEach(function (tv) {
+        console.log(tv.name);
+    });
+
+    const soldOutTvs = inventory.filter(function (tv){
+        return tv.sold === tv.originalStock;
+    })
+    console.log(soldOutTvs);
 }
 
 export default showOutcomeInConsole;
