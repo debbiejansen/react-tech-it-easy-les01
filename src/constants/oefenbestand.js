@@ -6,9 +6,9 @@ function showOutcomeInConsole() {
         console.log(tv.name);
     });
 
-    const soldOutTvs = inventory.filter(function (tv){
+    const soldOutTvs = inventory.filter((tv) => {
         return tv.sold === tv.originalStock;
-    })
+    });
     console.log(soldOutTvs);
 
     const findTv = inventory.find((tv) => {
